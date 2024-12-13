@@ -11,17 +11,17 @@ String formatTime(int time) {
   return time.toString().padLeft(2, '0');  // timer 시간의 00 : 00 형태로 출력
 }
 
-abstract class OperateTimer {    // 시작타임, 킅나는 타임.
+abstract class OperateTimer {    // 시작타임, 킅나는 타임. 인터페이스 역할.  각 클레스의 역할 부여.
   void startTimer();
   void cancelTimer();
 }
 
-class PomodoroCycle {
+class PomodoroCycle {    //사이클과 관련된 함수, 변수 모아놓음
   final int workDuration;
   final int shortBreakDuration;
   final int longBreakDuration;
 
-  PomodoroCycle(                       // 작업시간, 휴식시간 반복 사이클.
+  PomodoroCycle(                       
       {required this.workDuration,
       required this.shortBreakDuration,
       required this.longBreakDuration});
@@ -42,7 +42,7 @@ class CustomTimer implements OperateTimer {
 
   late Timer timer;
 
-  CustomTimer({required this.cycle})
+  CustomTimer({required this.cycle})      // cycle을 생성자로 만듬.
       : workingTime = cycle.workDuration,
         breakTime = cycle.shortBreakDuration;
 

@@ -101,7 +101,7 @@ class CustomTimer implements OperateTimer {
 
 void main() {
   final pomodoroCycle = PomodoroCycle(
-      workDuration: 5, shortBreakDuration: 2, longBreakDuration: 3);
+      workDuration: 1500, shortBreakDuration: 300, longBreakDuration: 900);
 
   final pomodoroTimer = CustomTimer(cycle: pomodoroCycle);
   pomodoroTimer.startTimer();

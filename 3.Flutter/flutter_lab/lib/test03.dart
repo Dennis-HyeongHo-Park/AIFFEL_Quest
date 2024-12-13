@@ -1,8 +1,7 @@
-main() {
-  int n1 = 10;
-  double d1 = 3.0;
-  int d2 = d1.toInt();
+import 'dart:async';
 
-
-  print('$')
+void main() {
+  Timer.periodic(const Duration(seconds: 1), (t) {
+    print('Current time : ${DateTime.now()}');
+  });
 }

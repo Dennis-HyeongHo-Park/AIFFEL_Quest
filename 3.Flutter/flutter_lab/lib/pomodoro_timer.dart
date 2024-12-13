@@ -8,10 +8,10 @@ import 'dart:async';
  */
 
 String formatTime(int time) {
-  return time.toString().padLeft(2, '0');
+  return time.toString().padLeft(2, '0');  // timer 시간의 00 : 00 형태로 출력
 }
 
-abstract class OperateTimer {
+abstract class OperateTimer {    // 시작타임, 킅나는 타임.
   void startTimer();
   void cancelTimer();
 }
@@ -21,23 +21,23 @@ class PomodoroCycle {
   final int shortBreakDuration;
   final int longBreakDuration;
 
-  PomodoroCycle(
+  PomodoroCycle(                       // 작업시간, 휴식시간 반복 사이클.
       {required this.workDuration,
       required this.shortBreakDuration,
       required this.longBreakDuration});
 
   String formatRemainingTime(int remainingTime) {
-    int minutes = remainingTime ~/ 60;
+    int minutes = remainingTime ~/ 60;                           
     int seconds = remainingTime % 60;
     return "${formatTime(minutes)}:${formatTime(seconds)}";
-  }
+  }                                        // 분 : 초 를 계산.
 }
 
 class CustomTimer implements OperateTimer {
   final PomodoroCycle cycle;
-  bool isBreakTime = false;
-  int round = 0;
-  int workingTime;
+  bool isBreakTime = false;         // 휴식시간일때 작동.
+  int round = 0;                    // 4번 반복 0 부터시작 +=을 통해 증가.
+  int workingTime;                     
   int breakTime;
 
   late Timer timer;
@@ -70,7 +70,9 @@ class CustomTimer implements OperateTimer {
 
     if (workingTime > 0) {
       workingTime -= 1;
-      print(cycle.formatRemainingTime(workingTime));
+      String workingTimeMinute = formatTime(workingTime ~/ 60);
+      String workingTimeSecond = formatTime(workingTime % 60);
+      print("$workingTimeMinute:$workingTimeSecond");
     }
 
     if (workingTime == 0) {
@@ -83,7 +85,9 @@ class CustomTimer implements OperateTimer {
 
   void handleBreakTime() {
     breakTime -= 1;
-    print(cycle.formatRemainingTime(breakTime));
+    String breakTimeMinute = formatTime(breakTime ~/ 60);
+    String breakTimeSecond = formatTime(breakTime % 60);
+    print("$breakTimeMinute:$breakTimeSecond");
 
     if (breakTime == 0) {
       print("휴식시간이 종료되었습니다. 작업 시간을 시작합니다.");

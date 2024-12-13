@@ -8,41 +8,41 @@ import 'dart:async';
  */
 
 String formatTime(int time) {
-  return time.toString().padLeft(2, '0');  // timer 시간의 00 : 00 형태로 출력
+  return time.toString().padLeft(2, '0');
 }
 
-abstract class OperateTimer {    // 시작타임, 킅나는 타임. 인터페이스 역할.  각 클레스의 역할 부여.
+abstract class OperateTimer {
   void startTimer();
   void cancelTimer();
 }
 
-class PomodoroCycle {    //사이클과 관련된 함수, 변수 모아놓음
+class PomodoroCycle {
   final int workDuration;
   final int shortBreakDuration;
   final int longBreakDuration;
 
-  PomodoroCycle(                       
+  PomodoroCycle(
       {required this.workDuration,
       required this.shortBreakDuration,
       required this.longBreakDuration});
 
   String formatRemainingTime(int remainingTime) {
-    int minutes = remainingTime ~/ 60;                           
+    int minutes = remainingTime ~/ 60;
     int seconds = remainingTime % 60;
     return "${formatTime(minutes)}:${formatTime(seconds)}";
-  }                                        // 분 : 초 를 계산.
+  }
 }
 
 class CustomTimer implements OperateTimer {
   final PomodoroCycle cycle;
-  bool isBreakTime = false;         // 휴식시간일때 작동.
-  int round = 0;                    // 4번 반복 0 부터시작 +=을 통해 증가.
-  int workingTime;                     
+  bool isBreakTime = false;
+  int round = 0;
+  int workingTime;
   int breakTime;
 
   late Timer timer;
 
-  CustomTimer({required this.cycle})      // cycle을 생성자로 만듬.
+  CustomTimer({required this.cycle})
       : workingTime = cycle.workDuration,
         breakTime = cycle.shortBreakDuration;
 
@@ -70,9 +70,7 @@ class CustomTimer implements OperateTimer {
 
     if (workingTime > 0) {
       workingTime -= 1;
-      String workingTimeMinute = formatTime(workingTime ~/ 60);
-      String workingTimeSecond = formatTime(workingTime % 60);
-      print("$workingTimeMinute:$workingTimeSecond");
+      print(cycle.formatRemainingTime(workingTime));
     }
 
     if (workingTime == 0) {
@@ -85,9 +83,7 @@ class CustomTimer implements OperateTimer {
 
   void handleBreakTime() {
     breakTime -= 1;
-    String breakTimeMinute = formatTime(breakTime ~/ 60);
-    String breakTimeSecond = formatTime(breakTime % 60);
-    print("$breakTimeMinute:$breakTimeSecond");
+    print(cycle.formatRemainingTime(breakTime));
 
     if (breakTime == 0) {
       print("휴식시간이 종료되었습니다. 작업 시간을 시작합니다.");
@@ -105,7 +101,7 @@ class CustomTimer implements OperateTimer {
 
 void main() {
   final pomodoroCycle = PomodoroCycle(
-      workDuration: 5, shortBreakDuration: 2, longBreakDuration: 3);
+      workDuration: 1500, shortBreakDuration: 300, longBreakDuration: 900);
 
   final pomodoroTimer = CustomTimer(cycle: pomodoroCycle);
   pomodoroTimer.startTimer();

@@ -50,7 +50,7 @@ class CustomTimer implements OperateTimer {
   void startTimer() {
     print("뽀모도로 타이머를 시작합니다.");
 
-    timer = Timer.periodic(Duration(seconds: 1), (Timer t) {
+    timer = Timer.periodic(const Duration(seconds: 1), (Timer t) {
       if (!isBreakTime) {
         handleWorkTime();
       } else {
@@ -59,6 +59,7 @@ class CustomTimer implements OperateTimer {
     });
   }
 
+  @override
   void cancelTimer() {
     timer.cancel();
   }

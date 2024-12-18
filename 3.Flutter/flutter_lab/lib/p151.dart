@@ -10,7 +10,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(              // 머터리얼 디자인 적용
+     
       home: Scaffold(                // 화면 구고 설계
+        
+        
         appBar: AppBar(              // 화면 위쪽 앱바 구성.
           centerTitle: true,         // 화면 위쪽 앱바 구성 title text 가운데로
           title: const Text('Hello, Dennis'),  // 앱바의 제목

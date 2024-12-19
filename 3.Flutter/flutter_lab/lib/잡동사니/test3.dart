@@ -20,10 +20,10 @@ void main() {
               width: 200,
               height: 200,
               color: Colors.blue,
-              child: Text('Dennis'),
+              child: const Text('Dennis'),
               
             ),
-            Positioned(
+            const Positioned(
               right: 30,
               bottom: 30,
               child: Text('Hello, World'),

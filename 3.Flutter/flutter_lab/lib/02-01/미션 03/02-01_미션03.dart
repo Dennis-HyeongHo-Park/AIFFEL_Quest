@@ -29,10 +29,12 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   onPressed() {
     print('클릭 했다. 이좌식아....');
   }
@@ -46,14 +48,14 @@ class MyApp extends StatelessWidget {
         ),
         // body: const Column(children: [ // 여기서의 const는 정적, 즉 한번 정의된 값을 변경할수 없어 onPressed에서 오류가 발생.
         body: Column(children: [
-          Icon(Icons.heart_broken, size: 100, color: Colors.red),
-          FaIcon(
+          const Icon(Icons.heart_broken, size: 100, color: Colors.red),
+          const FaIcon(
             FontAwesomeIcons.bell,
             size: 100,
           ),
           IconButton(
             onPressed: onPressed,
-            icon: Icon(
+            icon: const Icon(
               Icons.alarm,
               size: 100,
             ),

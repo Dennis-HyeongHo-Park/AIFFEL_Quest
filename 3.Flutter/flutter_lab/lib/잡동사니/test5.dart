@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,13 +14,15 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('02-02 미션 03'),
         ),
-        body: TestScreen(),
+        body: const TestScreen(),
       ),
     );
   }
 }
 
 class TestScreen extends StatefulWidget {
+  const TestScreen({super.key});
+
   @override
   TextState createState() => TextState();
 }
@@ -59,14 +63,14 @@ class TextState extends State<TestScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('TextField 1'),
+          const Text('TextField 1'),
           TextField(
-            style: TextStyle(fontSize: 15.0),
+            style: const TextStyle(fontSize: 15.0),
             controller: controller1,
             decoration: InputDecoration(
               labelText: 'Data 1',
-              prefixIcon: Icon(Icons.input),
-              border: OutlineInputBorder(),
+              prefixIcon: const Icon(Icons.input),
+              border: const OutlineInputBorder(),
               hintText: 'Enter first text here',
               helperText: '데이터를 입력하세요.',
               counterText: '$textCounter1 characters',
@@ -74,15 +78,15 @@ class TextState extends State<TestScreen> {
             textInputAction: TextInputAction.done,
             keyboardType: TextInputType.text,
           ),
-          SizedBox(height: 20), // TextField 간 간격 추가
-          Text('TextField 2'),
+          const SizedBox(height: 20), // TextField 간 간격 추가
+          const Text('TextField 2'),
           TextField(
-            style: TextStyle(fontSize: 15.0),
+            style: const TextStyle(fontSize: 15.0),
             controller: controller2,
             decoration: InputDecoration(
               labelText: 'Data 2',
-              prefixIcon: Icon(Icons.input),
-              border: OutlineInputBorder(),
+              prefixIcon: const Icon(Icons.input),
+              border: const OutlineInputBorder(),
               hintText: 'Enter second text here',
               helperText: '또 다른 데이터를 입력하세요.',
               counterText: '$textCounter2 characters',

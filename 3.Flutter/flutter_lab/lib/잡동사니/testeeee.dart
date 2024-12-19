@@ -14,16 +14,16 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.blue,
           title: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Container(child: Icon(Icons.workspace_premium)),
+            Container(child: const Icon(Icons.workspace_premium)),
             Expanded(
                 child: Container(
-                    alignment: Alignment.center, child: Text('SubQuest C 12')))
+                    alignment: Alignment.center, child: const Text('SubQuest C 12')))
           ]),
         ),
         body: Stack(
           children: [
             Align(
-              alignment: Alignment(0.0, -0.35),
+              alignment: const Alignment(0.0, -0.35),
               child: ElevatedButton(
                 onPressed: () {
                   print('버튼이 눌렸습니다.');
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
             Align(
-                alignment: Alignment(0.0, 0.0),
+                alignment: const Alignment(0.0, 0.0),
                 child: Container(width: 150, height: 150, color: Colors.red)),
           ],
           //

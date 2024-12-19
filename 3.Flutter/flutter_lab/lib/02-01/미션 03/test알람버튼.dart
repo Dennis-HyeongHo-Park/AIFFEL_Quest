@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 // class MyApp extends StatelessWidget {
@@ -26,6 +26,8 @@ void main() {
 // }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   onPressed() {
     print('*****클릭 확인*****');
   }

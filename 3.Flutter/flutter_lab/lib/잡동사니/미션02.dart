@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
 
   
   @override
@@ -16,11 +18,11 @@ class MyApp extends StatelessWidget {
 
 
         appBar: AppBar(
-          title: Text('Hello, Flutter!'),
+          title: const Text('Hello, Flutter!'),
 
 
         ),
-        body: Center(
+        body: const Center(
 
 
 

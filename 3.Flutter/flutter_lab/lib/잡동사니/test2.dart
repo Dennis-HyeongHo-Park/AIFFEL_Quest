@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
 
 
         appBar: AppBar(
-          title: Text('미션02'),
+          title: const Text('미션02'),
           backgroundColor: Colors.blue,
           centerTitle: true,
         ),
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
             color: Colors.blue, // 파란색 배경
 
 
-            child: Align(
+            child: const Align(
               alignment: Alignment.bottomRight, // 오른쪽 아래 정렬
               child: Padding(
                 padding: EdgeInsets.all(8.0), // 약간의 여백 추가

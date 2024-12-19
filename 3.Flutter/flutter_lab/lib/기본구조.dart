@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,8 +14,13 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Dennis.'),
         ),
-        body:
-            Center(child: GestureDetector(child: const Text('Hello. Dennis.'))),
+        body: Center(
+            child: GestureDetector(
+          child: const Text('Hello. Dennis.'),
+          onTap: () {
+            print(' 클릭! ');
+          },
+        )),
       ),
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(HomeScreen());
+  runApp(const HomeScreen());
 }
 
 class HomeScreen extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
             style: ButtonStyle(
                 backgroundColor:
                     WidgetStateProperty.all<Color>(Colors.yellow)),
-            child: Text('Click Me'),
+            child: const Text('Click Me'),
           ),
         ]),
       ),

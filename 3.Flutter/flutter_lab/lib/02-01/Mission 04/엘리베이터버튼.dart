@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
                   style: ButtonStyle(
                       backgroundColor:
                           WidgetStateProperty.all<Color>(Colors.blue)),
-                  child: Text('Click Me'),
+                  child: const Text('Click Me'),
                 ),
                 const ElevatedButton(
                   onPressed: null, // 비활성 버튼
@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
                   style: ButtonStyle(
                       backgroundColor:
                           WidgetStateProperty.all<Color>(Colors.red)),
-                  child: Text('Click Me'),
+                  child: const Text('Click Me'),
                 )
               ]),
         ),

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
-import 'detail_screen.dart';
+import 'HomeScreen.dart';
+import 'MenuScreen.dart';
+import 'MyOder.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,9 +16,9 @@ class MyApp extends StatelessWidget {
       initialRoute: '/home',
       routes: {
         '/home': (context) => const HomeScreen(),
-        '/detail': (context) => const DetailScreen(),
+        '/menu': (context) => const MenuScreen(),
+        '/oder': (context) => MyOrder(),
       },
     );
-    
   }
 }

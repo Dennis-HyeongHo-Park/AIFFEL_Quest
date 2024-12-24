@@ -7,15 +7,16 @@ void main() {
 class MyApp extends StatelessWidget {
   final bool _isDeepLink = true;
 
-  MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Navigator Test',
-      home: Navigator(pages: [
-        MaterialPage(child: OneScreen()),
-        if (_isDeepLink) MaterialPage(child: TwoScreen())
+      home: Navigator(
+        pages: [
+        const MaterialPage(child: OneScreen()),
+        if (_isDeepLink) const MaterialPage(child: TwoScreen())
       ], onPopPage: (route, result) => route.didPop(result)),
     );
   }

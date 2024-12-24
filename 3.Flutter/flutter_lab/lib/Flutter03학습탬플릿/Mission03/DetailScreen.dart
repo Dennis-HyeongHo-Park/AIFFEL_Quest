@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(DetailScreen());
+  runApp(const DetailScreen());
 }
 
 class DetailScreen extends StatelessWidget {

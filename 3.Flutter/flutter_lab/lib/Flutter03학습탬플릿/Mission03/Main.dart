@@ -4,7 +4,7 @@ import 'DetailScreen.dart';
 import 'SettingsScreen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,9 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: '/home',
       routes: {
-        '/home': (context) => HomeScreen(),
-        '/detail': (context) => DetailScreen(),
-        '/settings': (conetxt) => SettingsScreen(),
+        '/home': (context) => const HomeScreen(),
+        '/detail': (context) => const DetailScreen(),
+        '/settings': (conetxt) => const SettingsScreen(),
       },
     );
   }
